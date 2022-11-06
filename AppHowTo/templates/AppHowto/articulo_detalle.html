@@ -1,0 +1,12 @@
+{% extends "AppHowto/padre.html" %}
+
+{% block contenido_que_cambia %}
+<h3>Artículo seleccinado:</h3>
+<br>
+<p>Nombre del artículo: <i>{{ articulo.nombre }} </i> </p>
+<br>
+<p>Autor: <i> {{ articulo.autor }}</i></p>
+<br>
+<br>
+<p>Contenido: <i> {{ articulo.contenido }}</i></p>
+{% endblock %}

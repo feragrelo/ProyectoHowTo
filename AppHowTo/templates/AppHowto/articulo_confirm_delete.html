@@ -1,0 +1,10 @@
+
+{% extends "AppHowto/padre.html" %}
+{% block contenido_que_cambia %}
+<form action="" method="POST">
+    {% csrf_token %}
+    Seguro quieres borrar el artículo: <strong>{{ object }}</strong> ?
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

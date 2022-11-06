@@ -1,0 +1,24 @@
+{% extends "AppHowto/padre.html" %}
+{% block contenido_que_cambia %}
+
+<h1>Artículos How To</h1>
+{% if object_list %}
+
+    <ul>
+        {% for articulo in object_list %}
+
+        <li>
+            <p>Nombre: {{ articulo.nombre }}</p>
+            <p>
+                <a href="{% url 'ArticuloDetail' articulo.id %}">Ver artículo</a>
+                <a href="{% url 'ArticuloUpdate' articulo.id %}">Editar</a>
+                <a href="{% url 'ArticuloDelete' articulo.id %}">Borrar</a>
+            </p>    
+
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+<h3>Aún no se han cargados artículos</h3>
+{% endif %}
+{% endblock %}

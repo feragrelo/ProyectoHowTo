@@ -1,0 +1,14 @@
+{% extends "AppHowto/padre.html" %}
+{% block contenido_que_cambia %}
+{% for articulo in articulos_encontrados %}
+    {{ articulo.nombre }}
+    <br>
+    {{ articulo.autor }}
+    <br>
+    Contenido 
+    <br>
+      {{ articulo.contenido }} 
+    <br>
+{% endfor %}
+{% endblock %}
+
