@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppHowTo',
+    'AppConsulta',
+    
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,8 @@ ROOT_URLCONF = 'ProyectoHowTo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [f"{BASE_DIR}/ProyectoHowTo/AppHowTo/templates"],
+        #'DIRS': [f"{BASE_DIR}/ProyectoHowTo/AppHowTo/templates"],
+        "DIRS": [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
