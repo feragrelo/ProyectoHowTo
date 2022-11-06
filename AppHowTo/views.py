@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-from AppHowTo.models import Autor,Articulo,Comentario,Avatar
+from AppHowTo.models import Articulo,Comentario,Avatar
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from AppHowTo.forms import AvatarForm, UserEditionForm
 from django.views.generic import (
@@ -37,14 +37,14 @@ class ArticuloDetalle(LoginRequiredMixin, DetailView):
 
 class ArticuloCreacion(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ["nombre", "contenido","autor"]
+    fields = ["nombre", "contenido","user"]
     success_url = "/AppHowto/articulo/list"
 
 
 class ArticuloUpdateView(LoginRequiredMixin, UpdateView):
     model = Articulo
     success_url = "/AppHowto/articulo/list"
-    fields = ["nombre", "contenido","autor"]
+    fields = ["nombre", "contenido","user"]
 
 
 class ArticuloDelete(LoginRequiredMixin, DeleteView):

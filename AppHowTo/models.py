@@ -4,19 +4,20 @@ from django.db import models
 from django.forms import CharField, DateField, EmailField
 from django.contrib.auth.models import User
 
-class Autor (models.Model):
-    nombre=models.CharField(max_length=30)
-    apellido=models.CharField(max_length=30)
-    email=models.EmailField()
+#class Autor (models.Model):
+    #nombre=models.CharField(max_length=30)
+    #apellido=models.CharField(max_length=30)
+    #email=models.EmailField()
     
-    def __str__(self):
-        return f" {self.nombre}"
+    #def __str__(self):
+    #    return f" {self.nombre}"
     
 
 class Articulo(models.Model):
     nombre = models.CharField(max_length=30)
-    contenido=models.CharField(max_length=200)
-    autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+    contenido=models.CharField(max_length=2000)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True)
+    #autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
