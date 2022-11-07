@@ -37,14 +37,14 @@ class ArticuloDetalle(LoginRequiredMixin, DetailView):
 
 class ArticuloCreacion(LoginRequiredMixin, CreateView):
     model = Articulo
-    fields = ["nombre", "contenido","user"]
+    fields = ["nombre","fecha", "contenido","user"]
     success_url = "/AppHowto/articulo/list"
 
 
 class ArticuloUpdateView(LoginRequiredMixin, UpdateView):
     model = Articulo
     success_url = "/AppHowto/articulo/list"
-    fields = ["nombre", "contenido","user"]
+    fields = ["nombre","fecha", "contenido","user"]
 
 
 class ArticuloDelete(LoginRequiredMixin, DeleteView):
