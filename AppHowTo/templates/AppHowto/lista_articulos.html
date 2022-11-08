@@ -11,6 +11,7 @@
             <p>Nombre: {{ articulo.nombre }}</p>
             <p>
                 <a href="{% url 'ArticuloDetail' articulo.id %}">Ver artículo</a>
+                <a href="{% url 'ComentarioNuevo' articulo.id %}">Comentar</a>
                 <a href="{% url 'ArticuloUpdate' articulo.id %}">Editar</a>
                 <a href="{% url 'ArticuloDelete' articulo.id %}">Borrar</a>
             </p>    

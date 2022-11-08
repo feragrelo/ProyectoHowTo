@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth.views import LogoutView
 from AppHowTo.views import(inicio,MyLogin,ListaArticulos,ArticuloCreacion,
-registrarse,editar_perfil, agregar_avatar,ArticuloDetalle,ArticuloDelete,ArticuloUpdateView,about_us)
+registrarse,editar_perfil, agregar_avatar,ArticuloDetalle,ArticuloDelete,ArticuloUpdateView,about_us,ComentarioCreacion)
 
 urlpatterns = [
     path('inicio/', inicio, name="Inicio"),
@@ -17,4 +17,6 @@ urlpatterns = [
     path("editar/<pk>", ArticuloUpdateView.as_view(), name="ArticuloUpdate"),
     path("borrar/<pk>", ArticuloDelete.as_view(), name="ArticuloDelete"),
     path("", inicio),
+    #path('hacer_comentario/', hacer_comentario, name="HacerComentario"),
+    path("comentario/<pk>", ComentarioCreacion.as_view(), name="ComentarioNuevo"),
 ]

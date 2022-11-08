@@ -18,9 +18,16 @@ class Articulo(models.Model):
         return self.nombre
 
 class Comentario(models.Model):
-    respuesta=models.CharField(max_length=100)
+    comentario=models.CharField(max_length=100)
     articulo=models.ForeignKey(Articulo, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True)
+    
+    def __str__(self):
+        return self.comentario
     
 class Avatar(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to="avatares",null=True, blank=True)
+    
+    def __str__(self):
+        return self.user

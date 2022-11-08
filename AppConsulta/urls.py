@@ -1,8 +1,8 @@
 from django.urls import path
 
-from AppConsulta.views import(hacer_consulta)
+from AppConsulta.views import(ConsultaCreacion)
 
 urlpatterns = [
-    path('hacer_consulta/', hacer_consulta, name="Hacer consulta"),
+    path("consulta/", ConsultaCreacion.as_view(), name="ConsultaNueva"),
     
 ]

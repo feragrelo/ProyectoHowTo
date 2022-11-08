@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from AppHowTo.models import Avatar
+from AppHowTo.models import Avatar,Comentario
 
 
 class UserEditionForm(UserCreationForm):
@@ -25,3 +25,6 @@ class AvatarForm(forms.ModelForm):
     class Meta:
         model = Avatar
         fields = ["user","imagen" ]
+   
+        
+        

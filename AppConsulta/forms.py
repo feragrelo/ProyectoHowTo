@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from AppConsulta.models import Consulta
 
 class ConsultaFormulario(forms.Form):
     
@@ -8,6 +9,6 @@ class ConsultaFormulario(forms.Form):
     contenido= forms.CharField(label="Escriba su consulta:")
     
     class Meta:
-        model = User
+        model = Consulta
         fields = ["telefono", "email", "contenido"]
     

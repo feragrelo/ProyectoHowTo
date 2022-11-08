@@ -8,21 +8,19 @@
 {% if request.user.is_authenticated %}
 <p><a href="{% url 'Inicio' %}">Inicio</a></p>  
 <p><a href="{% url 'About_us' %}">About us</a></p>
+<p><a href="{% url 'ConsultaNueva' %}">Consulta</a></p>
 <p><a href="{% url 'AgregarAvatar' %}">Agregar Avatar</a></p>
 <p><a href="{% url 'EditarPerfil' %}">Editar Perfil</a></p>
 <p><a href="{% url 'ListaArticulos' %}">Mis Artículos</a></p>
 <p><a href="{% url 'ArticuloNuevo' %}">Crear Artículo</a></p> 
 <p><a href="{% url 'Logout' %}">Logout</a></p>
 
-
+<br>
     {% if avatar %}
         <img height="40px" src="{{ avatar }}"/>
   
     {% endif %}
-    <p> Bienvenido/a, {{ user.username }} !!</p>
+    <h3><p> Hola {{ user.username }} !!</p></h3>
 {% endif %}
-
-<br>
-<br>
 {% block contenido_que_cambia %}
 {% endblock %}

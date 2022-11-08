@@ -39,6 +39,11 @@ class ArticuloCreacion(LoginRequiredMixin, CreateView):
     model = Articulo
     fields = ["nombre","fecha", "contenido","user"]
     success_url = "/AppHowto/articulo/list"
+    
+class ComentarioCreacion(LoginRequiredMixin, CreateView):
+    model = Comentario
+    fields = ["comentario","articulo","user"]
+    success_url = "/AppHowto/articulo/list"
 
 
 class ArticuloUpdateView(LoginRequiredMixin, UpdateView):
@@ -87,7 +92,7 @@ def registrarse(request):
 
             return render(
                 request,
-                "AppHowto/inicio.html",
+                "AppHowto/usuario_registrado.html",
                 {"mensaje": f"Usuario: {username_capturado}"},
             )
 
@@ -131,8 +136,16 @@ def agregar_avatar(request):
         if form.is_valid():
             Avatar.objects.filter(user=request.user).delete()
             form.save()
+            avatar = Avatar.objects.filter(user=request.user).first()
+            if avatar is not None:
+                contexto = {"avatar": avatar.imagen.url}
             
-            return render(request, "AppHowto/inicio.html")
+
+            return render(request,"AppHowto/inicio.html",contexto )
 
     contexto = {"form": form}   
     return render(request, "AppHowto/avatar_form.html", contexto)
+
+
+
+
